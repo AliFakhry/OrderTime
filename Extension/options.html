@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="mystyle.css">
+</head>
+<body>
+
+<h1>OrderTime</h1>
+
+<h2>Alarm</h2>
+
+<label for="appt">Alarm Time:</label>
+
+<input type="time" id="alarm" name="alarm"
+       min="00:00" max="24:00" required>
+
+<br>
+<br>
+       
+<button id="saveAlarm">Save Alarm</button>
+
+<br>
+
+<h2>Stop Watch</h2>
+
+
+<form>
+
+    <input type="radio" name="choice" id = "none"> 0:00:00
+    <input type="radio" name="choice" id = "three"> 0:03:00
+    <input type="radio" name="choice" id = "five"> 0:05:00
+    <input type="radio" name="choice" id= "ten"> 0:10:00
+
+<br>
+    <input type="radio" name="choice" id = "fifteen"> 0:15:00
+    <input type="radio" name="choice" id = "thirty"> 0:30:00
+    <input type="radio" name="choice" id = "fourtyFive"> 0:45:00
+    <input type="radio" name="choice" id = "oneHour"> 1:00:00
+
+<br>
+
+    <input type="radio" name="choice" id = "oneFifteen"> 1:15:00
+    <input type="radio" name="choice" id = "oneThirty"> 1:30:00
+    <input type="radio" name="choice" id = "oneFourtyFive"> 1:45:00
+    <input type="radio" name="choice" id = "twoHour"> 2:00:00
+
+<br>
+
+    <input type="radio" name="choice" id = "twoFifteen"> 2:15:00
+    <input type="radio" name="choice" id = "twoThirty"> 2:30:00
+    <input type="radio" name="choice" id = "twoFourtyFive"> 2:45:00
+    <input type="radio" name="choice" id = "threeHour"> 3:00:00
+</form>
+
+<br>
+
+<button id="saveStop">Save Stop Watch</button>
+
+<br>
+
+<h2>Blocked Sites</h2>
+
+<textarea id="textarea" rows="5" cols="20" spellcheck="false"></textarea>
+
+<br> 
+
+
+<label for="redditCheck">Reddit:</label> 
+<input type="checkbox" id="redditCheck">
+
+<br>
+
+<label for="youTubeCheck">YouTube:</label> 
+<input type="checkbox" id="youTubeCheck">
+
+<br>
+
+<label for="instaCheck">Instagram:</label> 
+<input type="checkbox" id="instaCheck">
+
+<br>
+
+<label for="twitterCheck">Twitter:</label> 
+<input type="checkbox" id="twitterCheck">
+
+<br>
+
+<label for="faceBookCheck">FaceBook:</label> 
+<input type="checkbox" id="faceBookCheck">
+
+<br>
+<br>
+
+<button id="save">Save</button>
+
+
+<h2>
+Enabled
+</h2>
+
+<label class="switch">
+    <input type="checkbox" id = "checkbox" checked>
+    <span class="slider" ></span>
+</label> 
+
+<br>
+<br>
+
+<button id="saveClear">Stop and Clear</button>
+
+<script src="options.js"></script> 
+
+</body>
+
+
+
+</html>
