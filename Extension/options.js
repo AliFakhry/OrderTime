@@ -334,5 +334,7 @@ StopClear.addEventListener("click", () => {
   textarea.value = "";
   alarmBox.value = "";
   const blocked = textarea.value.split("\n").map(s => s.trim()).filter(Boolean);
+  continuingStop = true;
+  continuing = true;
   chrome.storage.local.set({ blocked });   
 });
