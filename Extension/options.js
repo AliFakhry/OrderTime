@@ -1,7 +1,6 @@
 const textarea = document.getElementById("textarea");
 const save = document.getElementById("save");
 const clockInput = document.getElementById("alarm");
-const stopWatchInput = document.getElementById("stopWatch");
 const checkBoxReddit = document.getElementById("redditCheck");
 const checkYouTube = document.getElementById("youTubeCheck");
 const checkFaceBook = document.getElementById("faceBookCheck");
@@ -57,7 +56,7 @@ function alarmFunction(alarmHours, alarmMinutes)
       continuing = false;
       return;
     }
-    sleep(30000);
+    sleep(15000);
 }
 
 function stopWatchFunction(pastTime, stopWatchTime)
@@ -69,7 +68,7 @@ function stopWatchFunction(pastTime, stopWatchTime)
       continuingStop = false;
       return;
     }
-    sleep(30000);
+    sleep(15000);
 }
 
 
@@ -334,4 +333,6 @@ StopClear.addEventListener("click", () => {
   checkYouTube.checked = false;
   textarea.value = "";
   alarmBox.value = "";
+  const blocked = textarea.value.split("\n").map(s => s.trim()).filter(Boolean);
+  chrome.storage.local.set({ blocked });   
 });
