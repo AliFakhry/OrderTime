@@ -3,7 +3,6 @@ const save = document.getElementById("save");
 const clockInput = document.getElementById("alarm");
 const checkBoxReddit = document.getElementById("redditCheck");
 const checkYouTube = document.getElementById("youTubeCheck");
-const checkFaceBook = document.getElementById("faceBookCheck");
 const checkInsta = document.getElementById("instaCheck");
 const checkTwitter = document.getElementById("twitterCheck");
 const checkSaveStop = document.getElementById("saveStop");
@@ -90,16 +89,14 @@ save.addEventListener("click", () => {
   {
     blocked.push("youtube.com");
   }
-  if (checkFaceBook.checked)
-  {
-    blocked.push("Facebook.com");
-  }
   if (checkSaveStop.disabled && checkbox.checked)
   {
     if (none.checked)
     {
       stopWatchTime = 0; 
       chrome.storage.local.set({ blocked });   
+      disabled();
+
     }
 
     else if (threeTime.checked)
@@ -113,6 +110,8 @@ save.addEventListener("click", () => {
       }
       audio.play();
       chrome.storage.local.set({ blocked });
+      disabled();
+
     }
 
     else if (fiveTime.checked)
@@ -126,6 +125,8 @@ save.addEventListener("click", () => {
       }
       audio.play();
       chrome.storage.local.set({ blocked });
+      disabled();
+
     }
 
     else if (ten.checked)
@@ -139,6 +140,8 @@ save.addEventListener("click", () => {
       }
       audio.play();
       chrome.storage.local.set({ blocked });
+      disabled();
+
     }
 
     else if (fifteenTime.checked)
@@ -152,6 +155,8 @@ save.addEventListener("click", () => {
       }
       audio.play();
       chrome.storage.local.set({ blocked });
+      disabled();
+
     }
 
     else if (thirtyTime.checked)
@@ -165,6 +170,8 @@ save.addEventListener("click", () => {
       }
       audio.play();
       chrome.storage.local.set({ blocked });
+      disabled();
+
     }
 
     else if (fourtyFiveTime.checked)
@@ -178,6 +185,8 @@ save.addEventListener("click", () => {
       }
       audio.play();
       chrome.storage.local.set({ blocked });
+      disabled();
+
     }
 
     else if (oneHourtTime.checked)
@@ -191,6 +200,8 @@ save.addEventListener("click", () => {
       }
       audio.play();
       chrome.storage.local.set({ blocked });
+      disabled();
+
     }
 
     else if (oneHourFifteenTime.checked)
@@ -204,6 +215,8 @@ save.addEventListener("click", () => {
       }
       audio.play();
       chrome.storage.local.set({ blocked });
+      disabled();
+
     }
 
     else if (oneHourThirtyTime.checked)
@@ -217,6 +230,8 @@ save.addEventListener("click", () => {
       }
       audio.play();
       chrome.storage.local.set({ blocked });
+      disabled();
+
     }
 
     else if (oneHourtFourtyTime.checked)
@@ -230,6 +245,8 @@ save.addEventListener("click", () => {
       }
       audio.play();
       chrome.storage.local.set({ blocked });
+      disabled();
+
     }
 
     else if (twoHourTime.checked)
@@ -243,6 +260,8 @@ save.addEventListener("click", () => {
       }
       audio.play();
       chrome.storage.local.set({ blocked });
+      disabled();
+
     }
 
     else if (twoHourFifteenTime.checked)
@@ -256,6 +275,8 @@ save.addEventListener("click", () => {
       }
       audio.play();
       chrome.storage.local.set({ blocked });
+      disabled();
+
     }
 
     else if (twoHourThirtyTime.checked)
@@ -269,6 +290,8 @@ save.addEventListener("click", () => {
       }
       audio.play();
       chrome.storage.local.set({ blocked });
+      disabled();
+
     }
 
     else if (twoHourFourtyTime.checked)
@@ -282,6 +305,7 @@ save.addEventListener("click", () => {
       }
       audio.play();
       chrome.storage.local.set({ blocked });
+      disabled();
     }
   }
 
@@ -296,6 +320,7 @@ save.addEventListener("click", () => {
     }
     audio.play();
     chrome.storage.local.set({ blocked });
+    disabled();
   }
 });
 
@@ -327,6 +352,7 @@ window.addEventListener("DOMContentLoaded", () => {
 StopClear.addEventListener("click", () => {
   checkSaveAlarm.disabled = false;
   checkSaveStop.disabled = false;
+  save.disabled = false;
   checkTwitter.checked = false;
   checkBoxReddit.checked = false;
   checkInsta.checked = false;
@@ -338,3 +364,9 @@ StopClear.addEventListener("click", () => {
   continuing = true;
   chrome.storage.local.set({ blocked });   
 });
+
+function disabled () {
+  checkSaveStop.disabled = true;
+  checkSaveAlarm.disabled = true;
+  save.disabled = true;
+}
